@@ -1,0 +1,176 @@
+main {
+    .grid-container-main {
+        @extend %grid;
+        @include grid (0.5fr 1fr, "offers offers"
+        "info products");
+        .offers {
+            width: 100%;
+            height: auto;
+            text-align: center;
+            background-image: url(../../../public/img/header.png);
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-attachment: fixed;
+            background-position: center;
+            @include flex (flex, space-evenly, center);
+            flex-direction: column;
+            grid-area: offers;
+            h2 {
+                text-align: center;
+                padding: 5px;
+                border: 2px solid $secondary-color;
+                background-color: $primary-color;
+            }
+            section {
+                z-index: 0;
+                width: 50%;
+                border: 5px solid $primary-color;
+                h5 {
+                    font-family: 'Yuji Boku', serif;
+                    background-color: $tertiary-color;
+                }
+                p {
+                    margin-bottom: 20px;
+                    padding-right: 10px;
+                    padding-left: 10px;
+                }
+            }
+        }
+        .info {
+            grid-area: info;
+            h2 {
+                text-align: center;
+            }
+        }
+    }
+    .products {
+        margin: 10px;
+        grid-area: products;
+        @include flex (flex, space-evenly, null);
+        flex-direction: column;
+        h2 {
+            text-align: center;
+        }
+        h3 {
+            color: $secondary-color;
+            font-family: 'Yuji Boku', serif;
+        }
+        a {
+            text-align: center;
+        }
+        img {
+            width: 200px;
+            height: 200px;
+        }
+        .productsContainer {
+            @include flex (flex, space-evenly, null);
+            border: 2px solid $secondary-color;
+            flex-wrap: wrap;
+            div {
+                text-align: center;
+                @include flex (flex, space-evenly, center);
+                flex-direction: column;
+                margin: 10px;
+                transition: 1s;
+                ul {
+                    text-align: center;
+                    @extend %grid;
+                    @include grid (1fr 0.5fr, "image info"
+                    "button button");
+                    margin: 10px;
+                    .imageProduct {
+                        grid-area: image;
+                    }
+                    p {
+                        grid-area: info;
+                        width: 200px;
+                    }
+                    .button {
+                        grid-area: button;
+                    }
+                }
+            }
+            div:hover {
+                transform: scale(1.1);
+            }
+        }
+    }
+    .infoPages {
+        div {
+            @include flex (flex, space-between, null);
+            p {
+                text-align:center;
+                font-size: 25px;
+                margin: 10px;
+            }
+            img {
+                width: 500px;
+                height: 500px;
+            }
+            margin: 10px;
+        }
+    }
+    form {
+        div {
+            input {
+                width: 100%;
+                margin: 10px 0;
+                box-sizing: border-box;
+                border-radius: 5px;
+                border-color: solid $secondary-color;
+                background-color: $primary-color;
+                color: $secondary-color;
+                transition: width 0.4s ease-in-out;
+            }
+            input:focus {
+                width: 100%;
+            }
+            select {
+                width: 100%;
+                padding: 16px 20px;
+                border: none;
+                border-radius: 4px;
+                background-color: #f1f1f1;
+            }
+            textarea {
+                width: 100%;
+                height: 300px;
+                padding: 12px 20px;
+                box-sizing: border-box;
+                border: 2px solid $secondary-color;
+                border-radius: 4px;
+                background-color: $primary-color;
+                resize: none;
+            }
+            input[type=button], input[type=submit], input[type=reset] {
+                background-color: $button-color;
+                border: none;
+                color: white;
+                padding: 16px 32px;
+                text-decoration: none;
+                margin: 4px 2px;
+                cursor: pointer;
+            }
+            .sex {
+                @include flex(flex, null, center);
+                
+                input {
+                    width: 5%;
+                }
+            }
+        }
+    }
+    .product {
+        ul {
+            @include flex (flex, space-evenly, center);
+            flex-direction: column;
+            li {
+                margin: 10px;
+            }
+        }
+    }
+}
+form {
+    color: $secondary-color;
+    margin: 5px;
+}

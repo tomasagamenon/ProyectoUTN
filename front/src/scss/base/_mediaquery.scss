@@ -1,0 +1,136 @@
+@media  screen and (max-width: 1000px) {
+    .stock{
+        font-size: 25px;
+    }
+    main {
+        .infoPages {
+            div {
+                p {
+                    font-size: 20px;
+                }
+                img {
+                    width: 300px;
+                    height: 300px;
+                }
+            }
+        }
+    }
+}
+@media screen and (max-width: 800px)
+{
+    .grid-container-main{
+        display: grid;
+        grid-template-rows: auto;
+        @include grid (1fr, "offers"
+        "info"
+        "products");
+    }
+    header{
+        flex-direction: column;
+        position: static;
+        @keyframes slidein {
+            from{
+                margin-left: 100%;
+                width: 300%;
+            }
+            to{
+                margin-left: 66%;
+                width: 100%;
+            }
+        }
+    }
+    main {
+        .grid-container-main {
+            .offers {
+                section {
+                    width: 70%;
+                }
+            }
+            .products {
+                .productsContainer {
+                    div {
+                        ul {
+                            text-align: center;
+                            display: grid;
+                            grid-template-rows: auto;
+                            @include grid (1fr, "image"
+                            "info"
+                            "button");
+                            margin: 10px;
+                        }
+                    }
+                }
+            }
+        }
+        
+        .products {
+            .productsContainer {
+                div {
+                    ul {
+                        text-align: center;
+                        display: grid;
+                        grid-template-rows: auto;
+                        @include grid (1fr, "image"
+                        "info"
+                        "button");
+                        margin: 10px;
+                    }
+                }
+            }
+        }
+        .infoPages {
+            div {
+                p {
+                    font-size: 15px;
+                }
+                img {
+                    width: 200px;
+                    height: 200px;
+                }
+            }
+        }
+    }
+}
+@media screen and (max-width: 450px)
+{
+    header nav ul{
+        flex-direction: column;
+        position: static;
+    }
+    main {
+        .grid-container-main {
+            .offers section {
+                width: 100%;
+            }
+            .products {
+                .productsContainer {
+                    div {
+                        ul {
+                            li {
+                                img {
+                                    width: 100px;
+                                    height: 100px;
+                                }
+                                p {
+                                    font-size: 15px;
+                                    width: 100px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .infoPages {
+            div {
+                p {
+                    font-size: 10px;
+                }
+                img {
+                    width: 100px;
+                    height: 100px;
+                }
+            }
+        }
+    }
+}

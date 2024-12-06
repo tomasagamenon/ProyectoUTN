@@ -1,0 +1,18 @@
+$primary-color: black;
+$secondary-color: white;
+$tertiary-color: rgb(46, 25, 59);
+$button-color: brown;
+
+%grid {
+    display: grid;
+    grid-template-rows: auto;
+}
+@mixin flex ($flex, $justify, $align) {
+    display: $flex;
+    justify-content: $justify;
+    align-items: $align;
+}
+@mixin grid ($columns, $areas) {
+    grid-template-columns: $columns;
+    grid-template-areas: $areas;
+}

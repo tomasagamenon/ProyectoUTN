@@ -1,0 +1,28 @@
+<div class="container" style="margin:100px auto">
+    <div class="row">
+        <div class="col-6 offset-3">
+            <h4>Agregar un nuevo producto</h4>
+            <form action="/admin/products/addProduct" method="post" enctype="multipart/form-data">
+                <div class="mb-3 row">
+                    <input type="text" class="form-control" placeholder="Nombre" name="name">
+                </div>
+                <div class="mb-3 row">
+                    <textarea type="text" class="form-control" placeholder="Descripcion" name="description"></textarea>
+                </div>
+                <div class="mb-3 row">
+                    <input type="number" class="form-control" placeholder="Precio" name="price">
+                </div>
+                <div class="mb-3 row">
+                    <input type="number" class="form-control" placeholder="Cantidad" name="quantity">
+                </div>
+                <div class="mb-3 row">
+                    <label>Imagen:<input type="file" class="form-control" name="imagen" id="imagen" /> </label>
+                </div>
+                {{#if error}}
+                <h5>{{message}}</h5>
+                {{/if}}
+                <button type="submit" class="btn btn-primary">Guardar</button>
+            </form>
+        </div>
+    </div>
+</div>
